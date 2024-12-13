@@ -4,32 +4,31 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 from datetime import datetime, timedelta
 
-# Initialize Firebase Admin SDK with your credentials file
-cred = credentials.Certificate("crop-yeild-project-firebase-adminsdk-rqplp-e61c3c5737.json")  # Your credentials file
+
+cred = credentials.Certificate("crop-yeild-project-firebase-adminsdk-rqplp-e61c3c5737.json")  
 firebase_admin.initialize_app(cred)
 
 # Firestore client
 db = firestore.client()
 
 # Weatherbit API configuration
-API_KEY = "3a224b3e590541ecb4e1e7a85b34e929"  # Your Weatherbit API key
+API_KEY = "3a224b3e590541ecb4e1e7a85b34e929"  
 BASE_URL = "https://api.weatherbit.io/v2.0/history/agweather"
-LAT = "34.035"  # Latitude of the location
-LON = "-117.846191"  # Longitude of the location
+LAT = "34.035"  
+LON = "-117.846191"  
 
-# Function to fetch data from Weatherbit API
 def fetch_agweather_data():
-    csv_data = []  # To store data for the CSV file
+    csv_data = []  
 
-    # Iterate through the past 10 days
+    
     for day_offset in range(10):
-        # Calculate the start and end times for the day
+        
         end_time = datetime.utcnow() - timedelta(days=day_offset)
         start_time = end_time - timedelta(hours=5)
         start_date_str = start_time.strftime("%Y-%m-%d:%H")
         end_date_str = end_time.strftime("%Y-%m-%d:%H")
 
-        # API request parameters
+       
         params = {
             "lat": LAT,
             "lon": LON,
