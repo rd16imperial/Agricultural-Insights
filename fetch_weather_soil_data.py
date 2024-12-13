@@ -3,15 +3,15 @@ import csv
 from datetime import datetime, timedelta
 
 # Weatherbit API Configuration
-API_KEY = "3a224b3e590541ecb4e1e7a85b34e929"  # Replace with your API key
+API_KEY = "3a224b3e590541ecb4e1e7a85b34e929" 
 BASE_URL = "https://api.weatherbit.io/v2.0/history/agweather"
-LAT = "34.035"  # Latitude of the location
-LON = "-117.846191"  # Longitude of the location
+LAT = "34.035"  
+LON = "-117.846191"  
 
-# Function to fetch agricultural weather data
+
 def fetch_agweather_data():
     try:
-        # Calculate start and end dates for the last 7 days
+        
         end_date = datetime.utcnow()
         start_date = end_date - timedelta(days=7)
 
