@@ -4,7 +4,7 @@ import datetime
 import time
 
 # OpenWeatherMap API Configuration
-API_KEY = "81e2eb3c9c31fdbe05e78d34ebe53d55"  
+API_KEY = ""  # API KEY REMOVED FOR GITHUB, PLEASE ADD YOUR OWN API KEY
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 
 
