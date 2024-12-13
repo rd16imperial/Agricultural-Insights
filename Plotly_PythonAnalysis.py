@@ -9,15 +9,14 @@ from dash import Dash, dcc, html
 import plotly.express as px
 from dash.dependencies import Input, Output
 
-# Load your data (replace with actual path or connection)
-# Example: merged_data = pd.read_csv('your_file.csv')
-merged_data = pd.read_csv('merged_data.csv')  # Ensure your file is loaded here
 
-# Prepare features and target for machine learning
+merged_data = pd.read_csv('merged_data.csv') 
+
+
 features = ["soilm_0_10cm", "soilm_10_40cm", "precip", "temperature", "humidity", "wind_speed", "evapotranspiration"]
 target = "crop_yield"
 
-# Add a computed crop_yield column (replace with your formula)
+
 merged_data["crop_yield"] = (
     10 * merged_data["soilm_0_10cm"].astype(float) +
     5 * merged_data["precip"].astype(float) -
