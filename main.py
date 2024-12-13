@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 db = firestore.Client()
 
 # Weatherbit API configuration
-API_KEY = "3a224b3e590541ecb4e1e7a85b34e929" 
+API_KEY = "" # API KEY REMOVED FOR GIT, PLEASE ADD YOUR OWN API KEY OR FIND IT IN REPORT
 LAT = "34.035" 
 LON = "-117.846191"  
 WEATHER_URL = "https://api.weatherbit.io/v2.0/history/hourly"
