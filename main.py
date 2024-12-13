@@ -6,13 +6,13 @@ from datetime import datetime, timedelta
 db = firestore.Client()
 
 # Weatherbit API configuration
-API_KEY = "3a224b3e590541ecb4e1e7a85b34e929"  # Replace with your Weatherbit API key
-LAT = "34.035"  # Latitude of the location
-LON = "-117.846191"  # Longitude of the location
+API_KEY = "3a224b3e590541ecb4e1e7a85b34e929" 
+LAT = "34.035" 
+LON = "-117.846191"  
 WEATHER_URL = "https://api.weatherbit.io/v2.0/history/hourly"
 AGWEATHER_URL = "https://api.weatherbit.io/v2.0/history/agweather"
 
-# Fetch weather data for the past 5 hours
+
 def fetch_weather_data():
     try:
         end_time = datetime.utcnow()
@@ -32,7 +32,7 @@ def fetch_weather_data():
         print(f"Error fetching weather data: {e}")
         return None
 
-# Fetch agricultural weather data for the past 7 days
+
 def fetch_soil_data():
     try:
         end_date = datetime.utcnow()
